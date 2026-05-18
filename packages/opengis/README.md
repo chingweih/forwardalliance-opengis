@@ -34,3 +34,12 @@ pnpm --filter @forwardalliance/opengis typecheck
 pnpm --filter @forwardalliance/opengis build
 pnpm --filter @forwardalliance/opengis dev
 ```
+
+## Column Map Standard Keys
+
+Make sure every provider has these keys mapped (if avaliable) to show metadata properly on map frontend.
+
+- `name`: `string`
+- `address`: `string`
+- `phone`: `string`, this could be a general "contact info" text.
+- `time`: `string` this could be a multiline text describing time opened for the location
