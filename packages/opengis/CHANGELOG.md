@@ -1,5 +1,12 @@
 # @forwardalliance/opengis
 
+## 1.0.4
+
+### Patch Changes
+
+- 3971f60: fix(opengis/aed): add fallback for null time
+- 655230f: provider: add stb data from forwardalliance
+
 ## 1.0.3
 
 ### Patch Changes
