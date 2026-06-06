@@ -5,11 +5,12 @@ import {
   blood,
   shelters,
   airDefenseShelters,
+  stb,
 } from '@forwardalliance/opengis/providers'
 import { saveToFile } from './utils'
 
 const cache = fs({ dir: '.cache' })
-const toFetch = [aed, blood, shelters, airDefenseShelters]
+const toFetch = [aed, blood, stb, shelters, airDefenseShelters]
 
 await Promise.all(
   toFetch.map(

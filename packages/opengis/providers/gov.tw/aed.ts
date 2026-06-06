@@ -12,18 +12,19 @@ export const aed = csv(
       address: '場所地址',
       phone: '開放時間緊急連絡電話',
       time: (feature) => {
-        const monToFriFrom = getStringProperty(feature, '周一至周五起')
-        const monToFriTo = getStringProperty(feature, '周一至周五迄')
+        const monToFriFrom = getStringProperty(feature, '周一至周五起') ?? ''
+        const monToFriTo = getStringProperty(feature, '周一至周五迄') ?? ''
         const satFrom = getStringProperty(feature, '周六起')
         const satTo = getStringProperty(feature, '周六迄')
         const sunFrom = getStringProperty(feature, '周日起')
         const sunTo = getStringProperty(feature, '周日迄')
 
-        return `一：${!monToFriFrom ? '無' : `${monToFriFrom}-${satTo}`}
-二：${!monToFriFrom ? '無' : `${monToFriFrom}-${satTo}`}
-三：${!monToFriFrom ? '無' : `${monToFriFrom}-${satTo}`}
-四：${!monToFriFrom ? '無' : `${monToFriFrom}-${satTo}`}
-五：${!monToFriFrom ? '無' : `${monToFriFrom}-${satTo}`}
+
+        return `一：${!monToFriFrom ? '無' : `${monToFriFrom}-${monToFriTo}`}
+二：${!monToFriFrom ? '無' : `${monToFriFrom}-${monToFriTo}`}
+三：${!monToFriFrom ? '無' : `${monToFriFrom}-${monToFriTo}`}
+四：${!monToFriFrom ? '無' : `${monToFriFrom}-${monToFriTo}`}
+五：${!monToFriFrom ? '無' : `${monToFriFrom}-${monToFriTo}`}
 六：${!satFrom ? '無' : `${satFrom}-${satTo}`}
 日：${!sunFrom ? '無' : `${sunFrom}-${sunTo}`}`
       },
