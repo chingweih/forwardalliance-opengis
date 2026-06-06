@@ -12,8 +12,8 @@ export const aed = csv(
       address: '場所地址',
       phone: '開放時間緊急連絡電話',
       time: (feature) => {
-        const monToFriFrom = getStringProperty(feature, '周一至周五起')
-        const monToFriTo = getStringProperty(feature, '周一至周五迄')
+        const monToFriFrom = getStringProperty(feature, '周一至周五起') ?? ''
+        const monToFriTo = getStringProperty(feature, '周一至周五迄') ?? ''
         const satFrom = getStringProperty(feature, '周六起')
         const satTo = getStringProperty(feature, '周六迄')
         const sunFrom = getStringProperty(feature, '周日起')
@@ -24,8 +24,8 @@ export const aed = csv(
 三：${monToFriFrom}-${monToFriTo}
 四：${monToFriFrom}-${monToFriTo}
 五：${monToFriFrom}-${monToFriTo}
-六：${!satFrom ? '無' : `${satFrom}-${satTo}`}
-日：${!sunFrom ? '無' : `${sunFrom}-${sunTo}`}`
+六：${!satFrom ? '無' : `${satFrom ?? ''}-${satTo ?? ''}`}
+日：${!sunFrom ? '無' : `${sunFrom ?? ''}-${sunTo ?? ''}`}`
       },
     },
     idColumn: 'AEDID',
